@@ -1,0 +1,61 @@
+campeonato{
+    
+    listaTimes[0]{
+        nome = a
+        pontos = 0
+
+        listaJogadores[0]{
+            nome = A
+            numero = 1
+            posicao = Goleiro
+        }
+
+        listaJogadores[1]{
+            nome = B
+            numero = 2
+            posicao = Zagueiro
+        }
+
+        listaJogadores[2]{
+            nome = C
+            numero = 6
+            posicao = Meio_campo
+        }
+
+        listaJogadores[3]{
+            nome = D
+            numero = 10
+            posicao = Atacante
+        }
+    }
+    
+    listaTimes[1]{
+        nome = b
+        pontos = 1
+
+        listaJogadores[0]{
+            nome = E
+            numero = 1
+            posicao = Goleiro
+        }
+
+        listaJogadores[1]{
+            nome = F
+            numero = 4
+            posicao = Zagueiro
+        }
+
+        listaJogadores[2]{
+            nome = G
+            numero = 8
+            posicao = Meio_campo
+        }
+
+        listaJogadores[3]{
+            nome = H
+            numero = 11
+            posicao = Atacante
+        }
+    }
+
+}
