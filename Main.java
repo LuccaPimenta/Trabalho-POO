@@ -1,5 +1,11 @@
-import java.util.Scanner;
 //import java.util.ArrayList;
+import java.util.Scanner;
+
+import Esportes.Basquete.*;
+import Esportes.Boxe.*;
+import Esportes.Futebol.*;
+import Esportes.Tenis.*;
+import Esportes.Volei.*;
 
 class Main {
     
@@ -10,22 +16,26 @@ class Main {
         Futebol campeonato = new Futebol();
 
         //necessário?
-        TimeFutebol time = new TimeFutebol();
+        TimeFutebol time;
         JogadorFutebol jogador = new JogadorFutebol();
-        /*
+        
+        System.out.println();
         String nome;
         
-        for(int i=0; i<campeonato.MAX; i++){
+        for(int i=0; i<campeonato.getMAX(); i++){
             System.out.print("Nome do time: ");
             nome = teclado.next();
             if(nome.equals("n")) break; //parada
-            time.setNome(nome);
-            time.attPontos(i);
+            time = new TimeFutebol(nome, i);
             campeonato.addTime(time);
+            campeonato.imprimeTimes();
         }
-        */
-
-        //testes
+        
+        // tirar do comentario quando acabar testes
+        // e atualizar os campos necessarios
+        
+        /*
+        //testes        
         time.setNome("a");
         time.attPontos(0);
         
@@ -40,7 +50,7 @@ class Main {
         campeonato.addTime(time);
         campeonato.imprimeTimes();
         System.out.println();
-
+        
         time.setNome("b");
         time.attPontos(1);
         campeonato.addTime(time);
@@ -69,5 +79,6 @@ class Main {
         campeonato.imprimeTimes();
         System.out.println();
         //fim dos testes
+        */
     }
 }

@@ -1,16 +1,24 @@
-public class JogadorFutebol{
+import java.util.ArrayList;
 
-    private String nome;
+import Esportes.Interfaces.*;
+
+public class JogadorFutebol extends Atleta{
+
     private int numero;
     private PosicoesFutebol posicao;
     private Titularidade titularidade;
 
-    public String getNome(){
-        return this.nome;
-    }
+     //lista de todos os jogadores de futebol com inscrição
+    private static ArrayList<JogadorFutebol> listaTodosJogFutebol = new ArrayList<>();
+    //func add faltando
+    
+    public JogadorFutebol(){}
 
-    public void setNome(String nome){
-        this.nome = nome;
+    public JogadorFutebol(int numero, PosicoesFutebol posicao, Titularidade titularidade){
+
+        this.numero = numero;
+        this.posicao = posicao;
+        this.titularidade = titularidade;
     }
 
     public int getNumero(){

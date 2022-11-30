@@ -1,7 +1,7 @@
 main{
 
     array list está apontando para o mesmo lugar em todos os casos
-}
+} --> RESOLVIDO
 
 jogador futebol{
 

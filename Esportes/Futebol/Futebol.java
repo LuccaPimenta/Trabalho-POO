@@ -1,14 +1,18 @@
 import java.util.ArrayList;
 
-public class Futebol{
+public class Futebol extends Esporte{
     
-    final private int MAX = 20;
+    final static private int MAX = 20;
     
-    ArrayList<TimeFutebol> listaTimes = new ArrayList<>(MAX);
+    private ArrayList<TimeFutebol> listaTimes;
 
+    public Futebol(){
+         listaTimes = new ArrayList<TimeFutebol>(MAX);
+    }
+
+    //ArrayList<TimeFutebol> listaTimes = new ArrayList<TimeFutebol>(MAX); --> diferente de cima?
+    
     /*
-    public Futebol(){}
-
     public Futebol(String nome, int pontos){
         time = new TimeFutebol();
         time.setNome(nome);
@@ -18,15 +22,22 @@ public class Futebol{
     
     public void imprimeTimes(){
         for(TimeFutebol time:listaTimes){
-            System.out.println(time.getNome() + " : " + time.getPontos() + " pontos\n" + time);
-            //time.imprimeJogadores();
+            System.out.println(time.getNome() + " : " + time.getPontos() + " pontos");
+            //time.imprimeJogadores(); //teste
         }
+        System.out.println();
         /*
         for(int i=0; i<times.size(); i++)
             System.out.println(i + "- " + times.get(i).getNome() + " : " + times.get(i).getPontos() + " pontos");
         */
     }
 
+    //testando
+    public void imprimeUmTime(TimeFutebol time){
+        System.out.println(time.getNome() + " : " + time.getPontos() + " pontos");
+        time.imprimeJogadores();
+    }
+    
     public void addTime(TimeFutebol time){
         
         if(listaTimes.size() < MAX)
@@ -39,5 +50,9 @@ public class Futebol{
     public void removeTime(int i){
         if(i > 0 && i < listaTimes.size())
             listaTimes.remove(i-1);
+    }
+
+    public int getMAX(){
+        return MAX;
     }
 }

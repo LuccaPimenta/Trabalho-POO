@@ -1,0 +1,19 @@
+Criar placar aleatório (futebol):
+
+import java.util.Random
+
+vet[] = [0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 1, 1, 1, 1, 1,
+        2, 2, 2, 2, 2, 2,
+        3, 3, 3, 3,
+        4, 4, 4,
+        5] --> vetor de possibilidades
+
+--> 8 "0"; 8 "1"; 6 "2"; 4 "3"; 3 "4"; 1 "5";
+
+--> mais chances de ter "poucos gols".
+
+vet[.random(30)] --> escolhe valor no vetor
+
+----------
+

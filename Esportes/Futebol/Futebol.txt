@@ -16,7 +16,7 @@ public class Futebol{
     }
     */
     
-    public void imprimeTimes(ArrayList<TimeFutebol> listaTimes){
+-->    public void imprimeTimes(//ArrayList<TimeFutebol> listaTimes//){
         for(TimeFutebol time:listaTimes){
             System.out.println(time.getNome() + " : " + time.getPontos() + " pontos\n" + time);
             //time.imprimeJogadores();

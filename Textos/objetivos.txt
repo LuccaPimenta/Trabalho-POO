@@ -1,0 +1,26 @@
+1) criar esportes com campeonatos e pontuações próprios.
+
+2) criar campeonatos com times e jogadores diferentes.
+
+3) tipos de campeonatos: pontos corridos e mata-mata.
+
+4) fazer os confrontos entre times (ou atletas). (!!!)
+
+5) tabela de resultados.
+
+6) menu de inserção e retirada de times, atletas, jogadores, etc.
+
+7) esportes:
+
+futebol
+volei
+boxe (artes marciais?)
+basquete
+tenis
+.
+.
+.
+
+8) ranking?
+
+9) IMPORTANTE: fazer código extra com times já definidos para apresentação!!!

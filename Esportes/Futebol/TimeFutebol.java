@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import Esportes.Interfaces.*;
 
 public class TimeFutebol implements AttPontos{
 
@@ -6,8 +7,16 @@ public class TimeFutebol implements AttPontos{
     private int pontos = 0;
     final private int MAX = 30;
 
-    ArrayList<JogadorFutebol> listaJogadores = new ArrayList<>(MAX);
+    private ArrayList<JogadorFutebol> listaJogadores;
 
+    public TimeFutebol(){}
+
+    public TimeFutebol(String nome, int pontos){
+        listaJogadores = new ArrayList<>(MAX);
+        this.nome = nome;
+        this.pontos = pontos;
+    }
+    
     public void attPontos(int pontosGanhos){
         this.pontos += pontosGanhos;
     }
@@ -39,7 +48,7 @@ public class TimeFutebol implements AttPontos{
 
     public void imprimeJogadores(){
         for(JogadorFutebol jogador:listaJogadores){
-            System.out.println(jogador.getNome() + " : Numero " + jogador.getNumero() + " " + jogador.getPosicao() + "\n" + jogador);
+            System.out.println(jogador.getNome() + " : Numero " + jogador.getNumero() + " " + jogador.getPosicao());
         }
     }
 }
