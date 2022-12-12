@@ -1,7 +1,7 @@
 public enum PosicoesFutebol{
 
-    Goleiro,
-    Zagueiro,
-    Meio_campo,
-    Atacante;
+    GOLEIRO,
+    ZAGUEIRO,
+    MEIOCAMPO,
+    ATACANTE;
 }

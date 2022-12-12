@@ -17,3 +17,14 @@ vet[.random(30)] --> escolhe valor no vetor
 
 ----------
 
+Criar placar aleatório (basquete):
+
+vet[] = [100:140] --> de 100 até 140
+
+--> empate: +1 para um dos times
+
+----------
+
+Futebol:
+
+--> mostrar quais jogadores fizeram os gols

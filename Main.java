@@ -1,84 +1,74 @@
-//import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Scanner;
-
-import Esportes.Basquete.*;
-import Esportes.Boxe.*;
-import Esportes.Futebol.*;
-import Esportes.Tenis.*;
-import Esportes.Volei.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         Scanner teclado = new Scanner(System.in);
-        
-        Futebol campeonato = new Futebol();
+        int qtdTimes, timesPorGrupo;
+        System.out.print("Digite a quantidade de time e quantos times por grupo: ");
+        qtdTimes = teclado.nextInt();
+        timesPorGrupo = teclado.nextInt();
+        Competicao campeonato = new Competicao(qtdTimes, timesPorGrupo);
+        //(qTotal, qPorGrupo)
+        Confrontos c = new Confrontos(null, null);
+        ArrayList<TimeFutebol> tf;
 
-        //necessário?
-        TimeFutebol time;
-        JogadorFutebol jogador = new JogadorFutebol();
+        int num;
+        Menu menu = new Menu();
         
-        System.out.println();
-        String nome;
+        campeonato.imprimeTimes();
+        for(int k=0; k<campeonato.grupos.size(); k++)
+            campeonato.grupos.get(k).imprimeGrupo();
         
-        for(int i=0; i<campeonato.getMAX(); i++){
-            System.out.print("Nome do time: ");
-            nome = teclado.next();
-            if(nome.equals("n")) break; //parada
-            time = new TimeFutebol(nome, i);
-            campeonato.addTime(time);
-            campeonato.imprimeTimes();
+        menu.imprimeMenu();
+        System.out.print("Digite um num: ");
+        num = teclado.nextInt();
+        while(num != 0){
+            
+            switch (num){
+                
+                case 1:
+                
+                    for(int k=0; k<campeonato.grupos.size(); k++){
+                        tf = campeonato.grupos.get(k).times;
+                        
+                        for(int i=0; i<tf.size(); i++){
+                            for(int j=i+1; j<tf.size(); j++){
+                                if(i != j){
+                                    c = new Confrontos(tf.get(i), tf.get(j));
+                                    c.fazerConfrontoPC();
+                                }
+                            }
+                        }
+                        System.out.println("\nTabela Final:");
+                        campeonato.grupos.get(k).imprimeGrupo();
+                    }
+                    break;
+                    
+                case 2:
+                    for(int k=0; k<campeonato.grupos.size(); k++){
+                        tf = campeonato.grupos.get(k).times;
+                        c.fazerConfrontoMM(4, tf);
+                    }
+                    break;
+                
+                default:
+                    System.out.println("\nInválido!");
+            }
+            
+            for(int k=0; k<campeonato.grupos.size(); k++){
+                tf = campeonato.grupos.get(k).times;
+                campeonato.resetaPontos(tf);
+            }
+            
+            menu.imprimeMenu();
+            System.out.print("Digite um num: ");
+            num = teclado.nextInt();
         }
-        
-        // tirar do comentario quando acabar testes
-        // e atualizar os campos necessarios
-        
-        /*
-        //testes        
-        time.setNome("a");
-        time.attPontos(0);
-        
-        jogador.setNome("A");
-        jogador.setNumero(1);
-        time.addJogador(jogador);
 
-        jogador.setNome("B");
-        jogador.setNumero(2);
-        time.addJogador(jogador);
-        
-        campeonato.addTime(time);
-        campeonato.imprimeTimes();
-        System.out.println();
-        
-        time.setNome("b");
-        time.attPontos(1);
-        campeonato.addTime(time);
-        campeonato.imprimeTimes();
-        System.out.println();
-
-        time.setNome("c");
-        time.attPontos(2);
-        campeonato.addTime(time);
-        campeonato.imprimeTimes();
-        System.out.println();
-
-        time.setNome("d");
-        time.attPontos(3);
-        campeonato.addTime(time);
-        campeonato.imprimeTimes();
-        System.out.println();
-
-        time.setNome("e");
-        time.attPontos(4);
-        campeonato.addTime(time);
-        campeonato.imprimeTimes();
-        System.out.println();
-
-        campeonato.removeTime(2);
-        campeonato.imprimeTimes();
-        System.out.println();
-        //fim dos testes
-        */
     }
 }

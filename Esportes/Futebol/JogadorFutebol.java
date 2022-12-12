@@ -1,24 +1,33 @@
 import java.util.ArrayList;
-
-import Esportes.Interfaces.*;
+import java.util.Scanner;
+import java.util.Enumeration;
 
 public class JogadorFutebol extends Atleta{
 
     private int numero;
     private PosicoesFutebol posicao;
     private Titularidade titularidade;
-
-     //lista de todos os jogadores de futebol com inscrição
-    private static ArrayList<JogadorFutebol> listaTodosJogFutebol = new ArrayList<>();
-    //func add faltando
     
     public JogadorFutebol(){}
 
-    public JogadorFutebol(int numero, PosicoesFutebol posicao, Titularidade titularidade){
+    public JogadorFutebol(String nome, int numero, String posicao, String titularidade){
 
+        this.nome = nome;
         this.numero = numero;
-        this.posicao = posicao;
-        this.titularidade = titularidade;
+        
+        try{
+            this.posicao = PosicoesFutebol.valueOf(posicao);
+        }
+        catch(IllegalArgumentException erro){
+            System.out.println("ERRO: Posicao invalida");
+        }
+        
+        try{
+            this.titularidade = Titularidade.valueOf(titularidade);
+        }
+        catch(IllegalArgumentException erro){
+            System.out.println("ERRO: Titularidade invalida");
+        }
     }
 
     public int getNumero(){
@@ -32,15 +41,19 @@ public class JogadorFutebol extends Atleta{
     public PosicoesFutebol getPosicao(){
         return this.posicao;
     }
-    /*
-    public void setPosicao(PosicoesFutebol posicao){
-        this.posicao = PosicoesFutebol.posicao;
+    
+    public void setPosicao(String posicao){
+        this.posicao = PosicoesFutebol.valueOf(posicao.toUpperCase());
     }
-    */
+
+    public Titularidade getTitularidade(){
+        return this.titularidade;
+    }
+    
     public void mudarTitularidade(){
-        if(this.titularidade ==  Titularidade.Titular)
-            this.titularidade = Titularidade.Reserva;
+        if(this.titularidade ==  Titularidade.TITULAR)
+            this.titularidade = Titularidade.RESERVA;
         else
-            this.titularidade = Titularidade.Titular;
+            this.titularidade = Titularidade.TITULAR;
     }
 }

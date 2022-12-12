@@ -19,7 +19,7 @@ campeonato{
         listaJogadores[2]{
             nome = C
             numero = 6
-            posicao = Meio_campo
+            posicao = MeioCampo
         }
 
         listaJogadores[3]{
@@ -48,7 +48,7 @@ campeonato{
         listaJogadores[2]{
             nome = G
             numero = 8
-            posicao = Meio_campo
+            posicao = MeioCampo
         }
 
         listaJogadores[3]{

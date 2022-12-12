@@ -1,24 +1,20 @@
+/*
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Futebol extends Esporte{
-    
+
     final static private int MAX = 20;
     
-    private ArrayList<TimeFutebol> listaTimes;
+    private ArrayList<TimeFutebol> listaTimes;//tirar
 
-    public Futebol(){
-         listaTimes = new ArrayList<TimeFutebol>(MAX);
-    }
+    public Futebol() throws FileNotFoundException{
 
-    //ArrayList<TimeFutebol> listaTimes = new ArrayList<TimeFutebol>(MAX); --> diferente de cima?
-    
-    /*
-    public Futebol(String nome, int pontos){
-        time = new TimeFutebol();
-        time.setNome(nome);
-        time.attPontos(pontos);
+        listaTimes = new ArrayList<TimeFutebol>(MAX);
+        
     }
-    */
     
     public void imprimeTimes(){
         for(TimeFutebol time:listaTimes){
@@ -29,7 +25,7 @@ public class Futebol extends Esporte{
         /*
         for(int i=0; i<times.size(); i++)
             System.out.println(i + "- " + times.get(i).getNome() + " : " + times.get(i).getPontos() + " pontos");
-        */
+        
     }
 
     //testando
@@ -48,11 +44,20 @@ public class Futebol extends Esporte{
     }
 
     public void removeTime(int i){
-        if(i > 0 && i < listaTimes.size())
+        if(i > 0 && i <= listaTimes.size())
             listaTimes.remove(i-1);
     }
 
-    public int getMAX(){
+    public static int getMAX(){
         return MAX;
     }
-}
+
+    public void setTempoLimite(){
+        this.tempoLimite = 90;
+    }
+
+    public ArrayList<TimeFutebol> getListaTimes() {
+      return listaTimes;
+    }
+
+}*/
