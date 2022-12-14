@@ -27,11 +27,11 @@ class Main {
         menu.imprimeMenu();
         System.out.print("Digite um num: ");
         num = teclado.nextInt();
-        while(num != 0){
-            
+        while(num != 0){//0 = sair
+
             switch (num){
                 
-                case 1:
+                case 1://pontos corridos
                 
                     for(int k=0; k<campeonato.grupos.size(); k++){
                         tf = campeonato.grupos.get(k).times;
@@ -49,7 +49,8 @@ class Main {
                     }
                     break;
                     
-                case 2:
+                case 2://mata mata
+                    
                     for(int k=0; k<campeonato.grupos.size(); k++){
                         tf = campeonato.grupos.get(k).times;
                         c.fazerConfrontoMM(4, tf);
